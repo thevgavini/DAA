@@ -14,28 +14,21 @@ for n in z:
             if array[j] <= pivot:
                 i = i + 1
                 (array[i], array[j]) = (array[j], array[i])
-
+                
         (array[i + 1], array[high]) = (array[high], array[i + 1])
-
         return i + 1
 
     def quickSort(array, low, high):
         if low < high:
-
             pi = partition(array, low, high)
-
             quickSort(array, low, pi - 1)
-
             quickSort(array, pi + 1, high)
 
     data = []
     for a in range(0, n):
         data.append(random.randint(1, 100))
-
     size = len(data)
-
     quickSort(data, 0, size - 1)
-
     end = timer()
     zt.append(end-start)
 
